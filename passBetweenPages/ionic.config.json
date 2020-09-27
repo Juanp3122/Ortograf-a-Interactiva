@@ -1,0 +1,7 @@
+{
+  "name": "passBetweenPages",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
