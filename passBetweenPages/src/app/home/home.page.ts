@@ -27,4 +27,39 @@ export class HomePage {
     };
     this.router.navigate(['teoria'], navigationExtras);
   }
+  goActividades() {
+   
+    let navigationExtras: NavigationExtras = {
+      state: {   }
+    };
+    this.router.navigate(['actividades'], navigationExtras);
+  }
+  goPuntaje() {
+   
+    let navigationExtras: NavigationExtras = {
+      state: {   }
+    };
+    this.router.navigate(['puntaje'], navigationExtras);
+  }
+  goActualizaciones() {
+   
+    let navigationExtras: NavigationExtras = {
+      state: {   }
+    };
+    this.router.navigate(['actualizaciones'], navigationExtras);
+  }
+  goDiploma() {
+   
+    let navigationExtras: NavigationExtras = {
+      state: {   }
+    };
+    this.router.navigate(['diploma'], navigationExtras);
+  }
+  goAjustes() {
+   
+    let navigationExtras: NavigationExtras = {
+      state: {   }
+    };
+    this.router.navigate(['ajustes'], navigationExtras);
+  }
 }

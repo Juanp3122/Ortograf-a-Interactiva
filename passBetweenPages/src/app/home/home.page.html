@@ -12,11 +12,11 @@
     <ion-list class="lista">
       <ion-item class="lista">Home</ion-item>
       <ion-item class="lista" (click) ="goback()" routerDirection="Back">Teoria </ion-item>
-      <ion-item class="lista">Actividades</ion-item>
-      <ion-item class="lista">Puntaje</ion-item>
-      <ion-item class="lista">Actualizaciones</ion-item>
-      <ion-item class="lista">Diploma</ion-item>
-      <ion-item class="lista">Ajustes</ion-item>
+      <ion-item class="lista" (click) ="goActividades()" routerDirection="Back">Actividades</ion-item>
+      <ion-item class="lista" (click) ="goPuntaje()" routerDirection="Back">Puntaje</ion-item>
+      <ion-item class="lista" (click) ="goActualizaciones()" routerDirection="Back">Actualizaciones</ion-item>
+      <ion-item class="lista" (click) ="goDiploma()" routerDirection="Back">Diploma</ion-item>
+      <ion-item class="lista" (click) ="goAjustes()" routerDirection="Back">Ajustes</ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
