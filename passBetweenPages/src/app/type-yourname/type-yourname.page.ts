@@ -17,7 +17,7 @@ export class TypeYournamePage implements OnInit {
     name: ''
   }
 
-goback() {
+gohome() {
   this.user.name = this.myName;  // Fetch from ionic-input 
   let navigationExtras: NavigationExtras = {
     state: {
