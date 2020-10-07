@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavigationExtras } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -29,6 +31,7 @@ export class AppComponent implements OnInit {
     });
   }
   ngOnInit() {
+
   }
   myName: string = "";
   user = {
