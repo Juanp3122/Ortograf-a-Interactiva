@@ -12,7 +12,7 @@ export class TypeYournamePage implements OnInit {
 
   ngOnInit() {
   }
-  myName: string = "";
+  myName: string = "hola";
   user = {
     name: ''
   }

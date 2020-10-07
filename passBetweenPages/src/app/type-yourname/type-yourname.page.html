@@ -1,25 +1,29 @@
 
+<ion-content class ="main">
 
 
-<ion-header style="margin-top: 120px;" class="ion-no-border">
+
+<ion-header style=" background-color: gray;margin-top: 120px;" class="ion-no-border" >
   
-    <ion-title style="text-align: center;" > 
-      ORTOGRAFIA INTERACTIVA
+    <ion-title  class="title" size-lg="4"size-xs="12"> 
+      ORTOGRAFIA <h1>
+        
+      </h1> INTERACTIVA
     </ion-title>
   
 </ion-header>
-<ion-content >
+<ion-content class ="main">
 
   <ion-grid fixed>
 
-    <ion-row style="margin-top: 160px;">
+    <ion-row style="margin-top: 60px;">
       <ion-col></ion-col>
 
       <ion-col class="ion-align-self-center" size-lg="4" size-xs="12">
         <ion-card color="dark"> 
           <ion-card-header >
             <div>
-              <ion-input placeholder="Ingrese su nick" type="text" [(ngModel)]="myName"></ion-input>
+              <ion-input placeholder="Ingrese su nick" type="text" id="input" [(ngModel)]="myName"></ion-input>
             </div>
 
           </ion-card-header>
@@ -41,4 +45,5 @@
 
 
 
+</ion-content>
 </ion-content>

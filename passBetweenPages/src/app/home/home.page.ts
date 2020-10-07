@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NavigationExtras } from '@angular/router';
+import { NavigationExtras } from '@angular/router'; 
 
 @Component({
   selector: 'app-home',
@@ -8,9 +8,20 @@ import { NavigationExtras } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-
-  constructor() { }
+  slideOpts ={
+    autoplay:true
+  }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+  goteoria() {
+   
+    let navigationExtras: NavigationExtras = {
+      state: { 
+        
+       }
+    };
+    this.router.navigate(['teoria'], navigationExtras);
   }
 }

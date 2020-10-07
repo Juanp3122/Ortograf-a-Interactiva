@@ -1,1 +1,64 @@
-
+<ion-app size-lg="4" size-xs="12">
+    <ion-content fullscreen class="ion-padding" scroll-y="false" >
+      <ion-slides pager="true" [options]="slideOpts" >
+  
+        <ion-slide>
+          <img class="luna" src='/assets/icon/karisma.png' />
+          <h2>¿Quienes Somos?</h2>
+          <p><b>Somos </b>una organización de la sociedad civil que busca responder a las amenazas y oportunidades que plantea la “tecnología para el desarrollo” al ejercicio de los derechos humanos.</p>
+        </ion-slide>
+  
+        <ion-slide>
+          <img src='/assets/icon/logo.png'>
+          <h2>Qué es Ortografía Interactiva?</h2>
+          <p><b>Ortografia Interactiva</b> es una aplicación que te ayudara a aprender sobre el uso de las diferentes reglas gramaticales existentes.</p>
+        </ion-slide>
+  
+        <ion-slide>
+          <img class="luna" src='/assets/icon/fsota.jpg' />
+          <h2>Teoría Acentuación</h2>
+          <p><b>Las </b>palabras, en español, tienen una sílaba llamada tónica, que es la que, al pronunciarla, suena más fuerte...</p>
+          <ion-button fill="clear" (click)=goteoria()>Aprendamos ya!<ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+        </ion-slide>
+  
+      </ion-slides>
+    </ion-content>
+  </ion-app>
+  
+  
+  
+  <style>
+    ion-slides {
+      height: 100%;
+    }
+  
+    .swiper-slide {
+      display: block;
+    }
+  
+    .swiper-slide h2 {
+      margin-top: 2.8rem;
+    }
+  
+    .swiper-slide img {
+      max-height: 50%;
+      max-width: 80%;
+      margin: 60px 0 40px;
+      pointer-events: none;
+    }
+  
+    b {
+      font-weight: 500;
+    }
+  
+    p {
+      padding: 0 40px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ion-color-step-600, #60646b);
+    }
+  
+    p b {
+      color: var(--ion-text-color, #000000);
+    }
+  </style>

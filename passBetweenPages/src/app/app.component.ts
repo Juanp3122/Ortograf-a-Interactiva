@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -11,7 +11,7 @@ import { NavigationExtras } from '@angular/router';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   data: any;
   userName: any;
   constructor(
@@ -28,6 +28,12 @@ export class AppComponent {
       }
     });
   }
+  ngOnInit() {
+  }
+  myName: string = "";
+  user = {
+    name: ''
+  }
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -35,52 +41,67 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+ 
   goteoria() {
-   
+    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {   }
+      state: { 
+        user: this.user,
+       }
     };
     this.router.navigate(['teoria'], navigationExtras);
   }
   gohome() {
-   
+    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {   }
+      state: { 
+        user: this.user,
+        }
     };
     this.router.navigate(['home'], navigationExtras);
   }
   goActividades() {
-   
+    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {   }
+      state: { 
+        user: this.user,
+        }
     };
     this.router.navigate(['actividades'], navigationExtras);
   }
   goPuntaje() {
-   
+    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {   }
+      state: {  
+        user: this.user,
+       }
     };
     this.router.navigate(['puntaje'], navigationExtras);
   }
   goActualizaciones() {
-   
+    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {   }
+      state: {  
+        user: this.user,
+       }
     };
     this.router.navigate(['actualizaciones'], navigationExtras);
   }
   goDiploma() {
-   
+    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {   }
+      state: {  
+        user: this.user,
+       }
     };
     this.router.navigate(['diploma'], navigationExtras);
   }
   goAjustes() {
-   
+    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {   }
+      state: {  
+        user: this.user,
+       }
     };
     this.router.navigate(['ajustes'], navigationExtras);
   }
