@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'ajustes',
     loadChildren: () => import('./ajustes/ajustes.module').then( m => m.AjustesPageModule)
   },
+  {
+    path: 'tipo-acento',
+    loadChildren: () => import('./tipo-acento/tipo-acento.module').then( m => m.TipoAcentoPageModule)
+  },
 
 ];
 

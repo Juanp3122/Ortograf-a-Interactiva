@@ -1,0 +1,174 @@
+
+
+
+<ion-content>
+  <ion-grid fixed>
+      <ion-row>
+          <ion-col size="12">
+              <ion-segment >
+                  <ion-segment-button *ngFor="let category of categories" value="{{category}}"
+                   style="border-style:solid;border-width: 2px;" (click)="onCategoryChange($event)" >
+                      <ion-label >{{category}}</ion-label>
+                  </ion-segment-button>
+              </ion-segment>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-toolbar>
+            <ion-searchbar></ion-searchbar>
+        </ion-toolbar>
+        <ion-card color="light">
+            
+            <ion-card-header>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-title  style="font-size: 19px;">LAS PALABRAS SEGÚN SU ACENTO</ion-card-title>
+            </ion-card-header>
+            <ion-card-content color="light">
+                Las palabras, en español, tienen una sílaba llamada tónica, que es la que, al pronunciarla, suena más fuerte.
+
+                En algunas ocasiones, la vocal de la sílaba tónica se marca mediante un signo ortográfico que se coloca en la parte superior de ésta (´). Este signo se denomina tilde o acento gráfico.
+                
+                Según la ubicación de la sílaba tónica, las palabras pueden clasificarse en:
+             <ion-list class="list"><b>AGUDAS</b></ion-list>
+             <ion-list class="list">Son aquellas palabras cuyo golpe de voz recae sobre la última sílaba</ion-list>
+             <ion-list class="list">cajón, partir, atril, sofá</ion-list>
+             <ion-list class="list"><b> GRAVES</b></ion-list>
+             <ion-list class="list">Son palabras de más de una sílaba. El golpe de voz recae sobre la penúltima sílaba.</ion-list>
+             <ion-list class="list">árbol, camisa, silla, lápiz</ion-list>
+             <ion-list class="list"><B>ESDRÚJULAS Y SOBREESDRÚJULAS </B></ion-list>
+             <ion-list class="list">Son aquellas palabras de más de dos sílabas. El golpe de voz recae sobre la antepenúltima sílaba (esdrújulas) o antes de la antepenúnltima (sobreesdrújula).</ion-list>
+             <ion-list class="list">cántaro, pájaro, íntimo, cándido, cámbiaselo</ion-list>
+             
+            </ion-card-content>
+            <img src='/assets/icon/foto2.jpg' />
+            </ion-card>
+      </ion-row>
+      <ion-row>
+        <ion-card style="width: 100%;" color="light">
+            
+            <ion-card-header>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-title  style="font-size: 19px;">REGLAS GENERALES DE ACENTUACIÓN GRÁFICA (Empleo de la tilde)</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                Llevan acento ortográfico (o tilde [´]): 
+                <ion-list class="list" ><b>AGUDAS</b></ion-list>
+                <ion-list class="list">Llevarán tilde las palabras agudas terminadas en vocal (a,e,i,o,u) y en las consonantes -n y -s.</ion-list>
+                <ion-list class="list">Anís - papá - cajón - sartén - maniquí - venís.</ion-list>
+                <ion-list class="list"><b> GRAVES</b></ion-list>
+                <ion-list class="list">Llevarán tilde las palabras graves que terminen en consonante, que no sea ni -n, ni -s.</ion-list>
+                <ion-list class="list">Útil - lápiz - álbum - alcázar.</ion-list>
+                <ion-list class="list"><B>ESDRÚJULAS Y SOBREESDRÚJULAS </B></ion-list>
+                <ion-list class="list">Siempre llevarán tilde todas las palabras esdrújulas y sobreesdrújulas.</ion-list>
+                <ion-list class="list">Cándido - esdrújula - cuéntaselo - celebérrimo.</ion-list>
+             
+            </ion-card-content>
+            <img src='/assets/icon/foto3.jpg' />
+            </ion-card>
+      </ion-row>
+      <ion-row>
+        <ion-card style="width: 100%;" color="light">
+            
+            <ion-card-header>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-title  style="font-size: 19px;">REGLAS PARTICULARES DE LA ACENTUACIÓN GRÁFICA</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                LA TILDE DIACRÍTICA Hay palabras que, atendiendo a las reglas generales de acentuación gráfica, no deberían llevar tilde. Sin embargo, algunas palabras admiten lo que se llama la tilde diacrítica, cuya función es la de evitar la confusión en la lengua escrita entre dos palabras que se escriben de la misma forma.
+ 
+                
+                        
+                            <ion-list class="list"><B>NO LLEVAN TILDES </B></ion-list>
+                            <ion-list class="list">El (artículo) </ion-list>
+                            <ion-list class="list">El sol reluce </ion-list>
+                            <ion-list class="list">De (preposición)  </ion-list>
+                            <ion-list class="list">Iros de aquí. </ion-list>
+                            <ion-list class="list">Se (pronombre)  </ion-list>
+                            <ion-list class="list">Se acabó. </ion-list>
+                            <ion-list class="list">Tu - mi (determinantes posesivos)  </ion-list>
+                            <ion-list class="list">Tu padre está ahí.  </ion-list>
+                            <ion-list class="list">Mi juguete está estropeado </ion-list>
+                            <ion-list class="list">Si (condicional)  </ion-list>
+                            <ion-list class="list">Si no llueve, iré </ion-list>
+                            <ion-list class="list">Mas (conjunción)   </ion-list>
+                            <ion-list class="list">Le llamé, mas no contestó. </ion-list>
+                            <ion-list class="list" >Te (pronombre)  </ion-list>
+                            <ion-list class="list">Te mandaré más trabajo. </ion-list>
+                       
+                        
+                            <ion-list class="list"><B> LLEVAN TILDES DIACRÍTICA</B></ion-list>
+                            <ion-list class="list">Él (pronombre personal)  </ion-list>
+                            <ion-list class="list">Él sabe tocar la flauta </ion-list>
+                            <ion-list class="list">Dé (verbo dar)   </ion-list>
+                            <ion-list class="list">Quiero que me dé esto. </ion-list>
+                            <ion-list class="list">Sé (verbo saber y verbo ser)   </ion-list>
+                            <ion-list class="list">Sé tú mismo; sé que lo harás. </ion-list>
+                            <ion-list class="list">Tú - mí (pronombres personales)   </ion-list>
+                            <ion-list class="list">Tú no debes ir allí.  </ion-list>
+                            <ion-list class="list">Eso es para mí. </ion-list>
+                            <ion-list class="list"> Sí (afirmación y pronombre)   </ion-list>
+                            <ion-list class="list">Creo que sí que iré.  </ion-list>
+                            <ion-list class="list">Lo tomó para sí.  </ion-list>
+                            <ion-list class="list">Más (adverbio)  </ion-list>
+                            <ion-list class="list">No quiero más. </ion-list>
+                            <ion-list class="list">Té (sustantivo - infusión)   </ion-list>
+                            <ion-list class="list">Tómate ya ese té. </ion-list>
+                    
+             
+            </ion-card-content>
+            <img src='/assets/icon/foto5.jpg' />
+            </ion-card>
+      </ion-row>
+      <ion-row>
+        <ion-card style="width: 100%;" color="light">
+            
+            <ion-card-header>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-title  style="font-size: 19px;">ACENTUACIÓN DE LOS DIPTONGOS Y TRIPTONGOS</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                Los diptongos y triptongos llevarán tilde cuando sigan la regla general de acentuación. La tilde se colocará sobre la vocal abierta del diptongo o triptongo.
+               
+                <ion-list class="list">Reunión - exceptuéis - tráigamelo - efectuáis.</ion-list>
+                
+             
+            </ion-card-content>
+            <img src='/assets/icon/foto6.jpg' />
+            </ion-card>
+      </ion-row>
+      <ion-row>
+        <ion-card style="width: 100%;" color="light">
+            
+            <ion-card-header>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-title  style="font-size: 19px;">ACENTUACIÓN DE LOS HIATOS</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                Cuando el hiato es el resultado de la destrucción de un diptongo, es decir, cuando hay dos vocales junta pertenecientes a sílabas diferentes, y una de ellas es una -i o una -u, se pondrá la tilde sobre la i o la u, aunque no siga la regla general.
+               
+                <ion-list class="list">Subían - oíamos - incluía - raíz</ion-list>
+                
+             
+            </ion-card-content>
+            <img src='/assets/icon/foto3.jpg'  />
+            </ion-card>
+      </ion-row>
+      <ion-row>
+        <ion-card style="width: 100%;" color="light">
+            
+            <ion-card-header>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-title style="font-size: 19px;">ACENTUACIÓN DE LOS EXCLAMATIVOS E INTERROGATIVOS</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                Las palabras que, quien, cual, cuando, cuanto, donde y como llevarán tilde siempre que sean utilizados exclamativos y como interrogativos.
+               
+                <ion-list class="list">¿Cómo sabes todo eso? ¿Quién te lo ha dicho? ¡Qué vacaciones tan divertidas! ¿Cuántas botellas quedan?</ion-list>
+                
+             
+            </ion-card-content>
+            <img src='/assets/icon/foto3.jpg' />
+            </ion-card>
+      </ion-row>
+  </ion-grid>
+</ion-content>

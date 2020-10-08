@@ -17,7 +17,7 @@ export class TypeYournamePage implements OnInit {
       console.log('callback - particles.js config loaded');
     });
   }
-  myName: string = "hola";
+  myName: string = "";
   user = {
     name: ''
   }
