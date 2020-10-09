@@ -1,0 +1,135 @@
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+          <ion-segment scrollable (ionChange) = "onCategoryChange($event)">
+              <ion-segment-button *ngFor="let category of categories" value="{{category}}"
+              style="border-style:solid;border-width: 2px;">
+                  <ion-label>{{category}}</ion-label>
+              </ion-segment-button>
+          </ion-segment>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-toolbar>
+        <ion-searchbar></ion-searchbar>
+    </ion-toolbar>
+    <ion-card color="light">
+        
+        <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title  style="font-size: 19px;">El punto</ion-card-title>
+        </ion-card-header>
+        <ion-card-content color="light">
+          Se usa punto al final de cualquier oración con sentido completo
+
+          Se llama punto seguido cuando separa entre si frases relacionadas dentro de un mismo párrafo.
+          <h1></h1>
+          Se llama punto aparte cuando a su continuación se pasa a otro párrafo para tratar otro aspecto del tema.
+          <h1></h1>
+          Punto final es el que cierra la última frase de un capitulo o de un escrito.
+          <h1></h1>
+          Recuerda
+          <h1></h1>
+          Separa con punto final las oraciones o cláusulas que expresen de manera completa el pensamiento.
+          <h1></h1>
+          Escribe punto final después de las abreviaturas Sr Sra Srta Dr. etc.
+          <h1></h1>
+          Escribe punto final después de epigrafes, titulos, etc Si estos aparecen aislados no se escribe el punto
+          <h1></h1>
+          <ion-label style="color: red;">Ejemplo:</ion-label>
+          <h1></h1>
+          El conde de Montecristo
+         
+        </ion-card-content>
+        <img src='/assets/icon/foto2.jpg' />
+        </ion-card>
+  </ion-row>
+  <ion-row>
+    <ion-card style="width: 100%;" color="light">
+        
+        <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title  style="font-size: 19px;">La coma</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          La coma cumple dos funciones primordiales en la redacción: la primera separar elementos o nombres análogos que van en serie sean palabras, frases
+
+          u oraciones
+          <h1></h1>
+          <ion-label style="color: red;">Ejemplo:</ion-label>
+          <h1></h1>
+          Se le observaba atento, apto investigador y confiado
+          <h1></h1>
+          La segunda función es la de separar frases o palabras incidentales dentro de la oracion, palabra que si se suprimen no ateran el sentido de la misma pues sirven para complementar o hacer énfasis en lo que se quiere expresar. Estas palabras o frases incidentales toman el nombre de parentéticas porque es como si se incluyeran entre paréntesis.
+          <h1></h1>
+          <ion-label style="color: red;">Ejemplo:</ion-label>
+          <h1></h1>
+          El libro ese de las tapas rojas es muy interesante La ortografia materia dificil, sólo se aprende practicando
+          <h1></h1>
+          La coma debe marcarse para separar el vocativo
+          <h1></h1>
+          <ion-label style="color: red;">Ejemplo:</ion-label>
+          <h1></h1>
+          Juan, ven
+          <h1></h1>
+          Te repito. Luis, que vengas
+          <h1></h1>
+          La coma debe marcarse para separar oracIones semejantes y breves,
+          <h1></h1>
+          <ion-label style="color: red;">Ejemplo:</ion-label>
+          <h1></h1>
+          El caballo relincha el toro muge el perro ladra
+          <h1></h1>
+          la coma debe marcarse para indicar la supresión o elipsis de un verbo dentro de una oración
+          <h1></h1>
+        
+            
+         
+        </ion-card-content>
+        <img src='/assets/icon/foto3.jpg' />
+        </ion-card>
+  </ion-row>
+  <ion-row>
+    <ion-card style="width: 100%;" color="light">
+        
+        <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title  style="font-size: 19px;">El punto y coma</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          El punto y coma se emplea para separar oraciones en serie, subordinadas por la primera y que expresan ideas afines 
+          
+          <h1></h1>
+          <ion-label style="color: red;">Ejemplo:</ion-label>
+          <h1></h1>
+          No hay nada más opuesto a los fines de toda crítica, que emplear palabras pomposas y a veces extravagantes, no hay nada que degrade mas a crico 
+          <h1></h1>
+          La primera parte de la obra es interesante la segunda, aburrida
+          <h1></h1>
+          El punto y coma se emplea además entre dos proposiciones unidas por una conjunción adversativa
+          <h1></h1>
+          <ion-label style="color: red;">Ejemplo:</ion-label>
+          <h1></h1>
+          Muchos intentaron llegar, pero fueron muy pocos los que consiguieron salır triunfantes
+          <h1></h1>
+          El punto y coma se emplea para separa proposiciones que completan el sentido general de la clausula
+          <h1></h1>
+          <ion-label style="color: red;">Ejemplo:</ion-label>
+          <h1></h1>
+          El grupo ha dado los ultimos toques, ha contemplado satisfecho la obra y se ha alejado contento
+          <h1></h1>
+          El punto y coma se emplea también para separar elementos análogos que a su vez estan separadas por comas
+          <h1></h1>
+          <ion-label style="color: red;">Ejemplo:</ion-label>
+          <h1></h1>
+           No es posible entenderse, amigo. Usted habla ingles: la señora francés, este caballero, español, aquel, chino, el de la esquina aleman
+          
+         
+        </ion-card-content>
+        <img src='/assets/icon/foto3.jpg' />
+        </ion-card>
+  </ion-row>
+  </ion-grid>
+
+</ion-content>

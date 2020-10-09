@@ -1,0 +1,68 @@
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+          <ion-segment scrollable (ionChange) = "onCategoryChange($event)">
+              <ion-segment-button *ngFor="let category of categories" value="{{category}}"
+              style="border-style:solid;border-width: 2px;">
+                  <ion-label>{{category}}</ion-label>
+              </ion-segment-button>
+          </ion-segment>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-toolbar>
+        <ion-searchbar></ion-searchbar>
+    </ion-toolbar>
+    <ion-card color="light"style="width: 100%;">
+        
+        <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title  style="font-size: 19px;">Construcción de las silabas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content color="light">
+          Las silabas pueden estar formadas por una consonante más una vocal, por ejemplo, pi-ja-ma.
+          <h1></h1>
+          Pueden empezar por vocal y luego consonante, por ejemplo, or-ques-la
+          <h1></h1>
+          O bien están formadas por una consonante, una vocal y otra consonante, por ejemplo, ban-que-te
+          <h1></h1>
+          También algunas consonantes se aglutinan antes de la vocal, por ejemplo, gla-dia-dor o van después de la vocal, por ejemplo, instruccion
+         
+        </ion-card-content>
+        <img src='/assets/icon/foto2.jpg' />
+        </ion-card>
+  </ion-row>
+  <ion-row>
+    <ion-card style="width: 100%;" color="light">
+        
+        <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title  style="font-size: 19px;">REGLAS GENERALES DE ACENTUACIÓN GRÁFICA (Empleo de la tilde)</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Las palabras que tienen una sola silaba se llaman monosilabas, las de dos silabas son bisilabas,les de tres, trisilabas y las que benen cuatro o más
+
+          silabas son polisílabas.
+        </ion-card-content>
+        <img src='/assets/icon/foto3.jpg' />
+        </ion-card>
+  </ion-row>
+  <ion-row>
+    <ion-card style="width: 100%;" color="light">
+        
+        <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title  style="font-size: 19px;">Silaba tónica:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          La sílaba sobre la que recae el acento tónico recibe el nombre de silaba tónica,
+
+          El acento tónico es la mayor intensidad con que pronunciamos una determinada silaba de una palabra. Las silabas que no poseen acento tonico se laman åtonas.
+        </ion-card-content>
+        <img src='/assets/icon/foto3.jpg' />
+        </ion-card>
+  </ion-row>
+  </ion-grid>
+
+</ion-content>

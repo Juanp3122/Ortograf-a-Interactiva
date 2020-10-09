@@ -9,13 +9,13 @@ import { Router, NavigationExtras } from '@angular/router';
 export class TeoriaPage implements OnInit {
 
   constructor(private router: Router) { }
-  categories = [' Acento','como','hptas','les','va'];
+  categories = [' Acento','Fonemas','Signos de puntuacion','Silabas','Mayusculas'];
   ngOnInit() {
   }
   onCategoryChange(category){
 
   if(category.detail.value==' Acento'){
-    console.log("fsotasdasdsadsadsaaa");
+    
     let navigationExtras: NavigationExtras = {
       state: { 
         
@@ -23,8 +23,34 @@ export class TeoriaPage implements OnInit {
     };
     this.router.navigate(['tipo-acento'], navigationExtras);
     
-  }else{
-    console.log("fsotaaa");
+  }else if(category.detail.value=='Fonemas') {
+    let navigationExtras: NavigationExtras = {
+      state: { 
+        
+       }
+    };
+    this.router.navigate(['fonemas'], navigationExtras);
+  }else if(category.detail.value=='Signos de puntuacion') {
+    let navigationExtras: NavigationExtras = {
+      state: { 
+        
+       }
+    };
+    this.router.navigate(['signos-puntuacion'], navigationExtras);
+  }else if(category.detail.value=='Silabas') {
+    let navigationExtras: NavigationExtras = {
+      state: { 
+        
+       }
+    };
+    this.router.navigate(['silaba'], navigationExtras);
+  }else if(category.detail.value=='Mayusculas') {
+    let navigationExtras: NavigationExtras = {
+      state: { 
+        
+       }
+    };
+    this.router.navigate(['mayusculas'], navigationExtras);
   }
   }
   

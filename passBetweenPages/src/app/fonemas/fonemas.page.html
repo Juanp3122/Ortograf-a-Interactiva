@@ -1,0 +1,56 @@
+
+
+<ion-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+            <ion-segment scrollable (ionChange) = "onCategoryChange($event)">
+                <ion-segment-button *ngFor="let category of categories" value="{{category}}"
+                style="border-style:solid;border-width: 2px;">
+                    <ion-label>{{category}}</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-toolbar>
+          <ion-searchbar></ion-searchbar>
+      </ion-toolbar>
+      <ion-card color="light">
+          
+          <ion-card-header>
+          <ion-card-subtitle></ion-card-subtitle>
+          <ion-card-title  style="font-size: 19px;">Fonemas vocálicos</ion-card-title>
+          </ion-card-header>
+          <ion-card-content color="light">
+            Hay cinco fonemas vocálicos en castellano a-e-i-o-u
+            <h1></h1>
+            Los fonemas vocálicos se llaman también vocales porque son producidos por las simples vibraciones de las cuerdas vocales, sin que el aire expulsado encuentre obstáculo alguno en su salida. Todos son orales, es decir, emplean la boca como cavidad de resonancia en su emsión.
+           
+          </ion-card-content>
+          <img src='/assets/icon/foto2.jpg' />
+          </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card style="width: 100%;" color="light">
+          
+          <ion-card-header>
+          <ion-card-subtitle></ion-card-subtitle>
+          <ion-card-title  style="font-size: 19px;">Fonemas consonánticos</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Son los demás fonemas en castellano Reciben también el nombre de consonantes, que son aquellas que se producen no solo con la vibración de las cuerdas vocales, sino con la participación de distintos órganos integrantes del aparato de fonación.
+            <h1></h1>
+            Por ejemplo, consonantes como la b y la p exigen la intervención de los labios, por eso son bilabiales y uno observa como estos se abren repentinamente al ser embda la voz
+            <h1></h1>
+            Otras, como la t y la d se producen cuando la lengua roza con los dientes superiores y por eso se llaman dentales 
+              
+           
+          </ion-card-content>
+          <img src='/assets/icon/foto3.jpg' />
+          </ion-card>
+    </ion-row>
+
+    </ion-grid>
+
+</ion-content>

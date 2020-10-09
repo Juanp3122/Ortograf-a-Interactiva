@@ -43,6 +43,22 @@ const routes: Routes = [
     path: 'tipo-acento',
     loadChildren: () => import('./tipo-acento/tipo-acento.module').then( m => m.TipoAcentoPageModule)
   },
+  {
+    path: 'fonemas',
+    loadChildren: () => import('./fonemas/fonemas.module').then( m => m.FonemasPageModule)
+  },
+  {
+    path: 'silaba',
+    loadChildren: () => import('./silaba/silaba.module').then( m => m.SilabaPageModule)
+  },
+  {
+    path: 'signos-puntuacion',
+    loadChildren: () => import('./signos-puntuacion/signos-puntuacion.module').then( m => m.SignosPuntuacionPageModule)
+  },
+  {
+    path: 'mayusculas',
+    loadChildren: () => import('./mayusculas/mayusculas.module').then( m => m.MayusculasPageModule)
+  },
 
 ];
 
