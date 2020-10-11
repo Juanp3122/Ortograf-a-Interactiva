@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./diploma.page.scss'],
 })
 export class DiplomaPage implements OnInit {
-
+  employee = { fname: 'Happy', lname: 'Singh', city: 'Punjab' };
+  showCity = false;
   constructor() { }
 
   ngOnInit() {
+  }
+  moreInfo() {
+    this.showCity = false;
   }
 
 }
