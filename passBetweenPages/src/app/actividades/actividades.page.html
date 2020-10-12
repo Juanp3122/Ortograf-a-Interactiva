@@ -1,12 +1,12 @@
-<ion-content class="ion-padding">
-    <ion-grid fixed>
+<ion-content  class="ion-padding">
+    <ion-grid  style="margin-top: 100px; " >
         <ion-row>
             <ion-col >
 
             </ion-col>
             <ion-col   size-xs="14" size-lg="10">
 
-                <ion-card color="light"  style="width: 100%;">
+                <ion-card  *ngIf="setContenido()" color="light"  style="width: 100%;">
                     <ion-card-header>
                         <h3>La palabra {{palabra[indice]}} se considera:</h3>
 
@@ -14,45 +14,55 @@
                     <ion-card-content>
 
                         <ion-list class="btn">
-                            <ion-list class="btn">
-        
-                                <ion-button  [ngStyle]="{'color':isCorrect() === true ? 'green' : 'red'}" [disabled]="bloquear" (click)="setAguda()" >
-                                    Aguda</ion-button>
+                            <ion-list class="btn" >
+                                <ion-button [disabled]="bloquear" (click)="setAguda()"  [ngStyle]="styleAguda"
+                                    >Aguda</ion-button>
                             </ion-list>
                             <ion-list class="btn" >
-        
-                                <ion-button [ngStyle]="{'color':isCorrect() === true? 'green' : 'red' }" [disabled]="bloquear" (click)="setGrave()">
-                                    Grave
-                                </ion-button>
-                            </ion-list >
+                                <ion-button [disabled]="bloquear"  [ngStyle]="styleGrave"
+                                    (click)="setGrave()">Grave</ion-button>
+                            </ion-list>
                             <ion-list class="btn" >
-                                <ion-button [disabled]="bloquear"  [ngStyle]="{'color':isCorrect() ===true ? 'green' : 'red' }"
+                                <ion-button [disabled]="bloquear"  [ngStyle]="styleEsdrujula"
                                     (click)="setEsdrujula()">Esdrújula</ion-button>
                             </ion-list>
-                            <ion-list class="btn">
-                                <ion-button [disabled]="bloquear"  [ngStyle]="{'color':isCorrect() ===true ? 'green' : 'red' }"
-                                    (click)="setSobreesdrujula()">Sobreesdrujula</ion-button>
-                                </ion-list>
+                            <ion-list class="btn" >
+                                <ion-button [disabled]="bloquear"  [ngStyle]="styleSobreesdrujula"
+                                    (click)="setSobreesdrujula()">Sobreesdrújula</ion-button>
+                            </ion-list>
                                     <ion-list class="btn" >
             
-                                        <div *ngIf="isCorrect() === true">
+                                        <div *ngIf="correct === 1">
             
-                                            <h3>Aqui es donde le diríamo </h3>
+                                            <h3>Correcto!, {{palabra[indice]}} es {{respuesta}} por que  {{setRetroalimentacion()}} </h3>
                                         </div>
-                                        <div *ngIf="isCorrect() === false">
+                                        <div *ngIf="correct === 2">
             
-                                            <h3>Aqui es donde le diríamos a la persona por que tuvo bien la pregunta o porque la tuvo mal xd </h3>
+                                            <h3>Incorrecto!, {{palabra[indice]}} no es {{respuesta}} por que no {{setRetroalimentacion()}} </h3>
                                         </div>
                                     </ion-list>
                             <ion-list class="btn">
-                                <ion-button (click)="siguiente()">Siguiente</ion-button>
+                                <ion-button color="secondary" (click)="siguiente()">Siguiente</ion-button>
                                 <ion-label style="margin-left:30px; font-size:20px ">Puntaje :{{ puntaje}}</ion-label>
                             </ion-list>
         
                         </ion-list>
                     </ion-card-content>
 
+                </ion-card >
+                <ion-card  *ngIf="!setContenido()" color="light"  style="width: 100%;">
+                    <ion-card-content>
+                        <ion-list class="btn">
+                            <ion-label style="font-size: 75px;align-self: center;">Tu puntaje es: {{ puntaje}}/40 </ion-label>
+                        </ion-list>
+                        <ion-list class="btn">
+                            <ion-button   
+                                    (click)="Retry()">¡Vuelve a intentarlo!</ion-button>
+                        </ion-list>
+                    </ion-card-content>
+
                 </ion-card>
+
             </ion-col>
             <ion-col>
          
