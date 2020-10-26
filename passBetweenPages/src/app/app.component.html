@@ -1,34 +1,48 @@
 <ion-app>
-  
-  <ion-content [fullscreen]="true" class="main" padding>
-    
-    <ion-menu side="start" menuId="first" contentId="main">
-      
-    <ion-header>
-      <ion-toolbar color="dark">
-        <ion-title id="nameLabel">Menu Principal</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content  >
-      <ion-list class="lista">
-        <ion-item class="lista" (click) ="gohome()" routerDirection="Back">Home</ion-item>
-        <ion-item class="lista" (click) ="goteoria()" routerDirection="Back">Teoria </ion-item>
-        <ion-item class="lista" (click) ="goActividades()" routerDirection="Back">Actividades</ion-item>
-        <ion-item class="lista" (click) ="goPuntaje()" routerDirection="Back">Puntaje</ion-item>
-        <ion-item class="lista" (click) ="goActualizaciones()" routerDirection="Back">Actualizaciones</ion-item>
-        <ion-item class="lista" (click) ="goDiploma()" routerDirection="Back">Diploma</ion-item>
-        <ion-item class="lista" (click) ="goAjustes()" routerDirection="Back">Ajustes</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  
-  
-  <ion-router-outlet id="main"></ion-router-outlet>
-  
-  
-  </ion-content>
-  
 
-  
-    
-  </ion-app>
+  <div *ngIf="showSplash" class="splash">
+    <div class="sk-cube-grid">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+      <div class="sk-cube sk-cube3"></div>
+      <div class="sk-cube sk-cube4"></div>
+      <div class="sk-cube sk-cube5"></div>
+      <div class="sk-cube sk-cube6"></div>
+      <div class="sk-cube sk-cube7"></div>
+      <div class="sk-cube sk-cube8"></div>
+      <div class="sk-cube sk-cube9"></div>
+    </div>
+  </div>
+
+  <ion-content [fullscreen]="true" class="main" padding>
+
+    <ion-menu side="start" menuId="first" contentId="main">
+
+      <ion-header>
+        <ion-toolbar color="dark">
+          <ion-title id="nameLabel">Menu Principal</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list class="lista">
+          <ion-item class="lista" (click)="gohome()" routerDirection="Back">Home</ion-item>
+          <ion-item class="lista" (click)="goteoria()" routerDirection="Back">Teoria </ion-item>
+          <ion-item class="lista" (click)="goActividades()" routerDirection="Back">Actividades</ion-item>
+          <ion-item class="lista" (click)="goPuntaje()" routerDirection="Back">Puntaje</ion-item>
+          <ion-item class="lista" (click)="goActualizaciones()" routerDirection="Back">Actualizaciones</ion-item>
+          <ion-item class="lista" (click)="goDiploma()" routerDirection="Back">Diploma</ion-item>
+          <ion-item class="lista" (click)="goAjustes()" routerDirection="Back">Ajustes</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+
+    <ion-router-outlet id="main"></ion-router-outlet>
+
+
+  </ion-content>
+
+
+
+
+</ion-app>

@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavigationExtras } from '@angular/router';
+import { timer } from 'rxjs/internal/observable/timer';
 
 
 
@@ -16,6 +17,9 @@ import { NavigationExtras } from '@angular/router';
 export class AppComponent implements OnInit {
   data: any;
   userName: any;
+
+  showSplash = true;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -40,6 +44,8 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      timer(3000).subscribe(()=> this.showSplash = false)
     });
   }
  
