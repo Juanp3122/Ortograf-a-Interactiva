@@ -22,20 +22,18 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private activatedRoute: ActivatedRoute,private router: Router
   ) {
-    this.initializeApp();
+
     this.activatedRoute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.data = this.router.getCurrentNavigation().extras.state.user;
         this.userName = Object.values(this.data);
       }
     });
+    this.initializeApp();
+    
   }
   ngOnInit() {
 
-  }
-  myName: string = "";
-  user = {
-    name: ''
   }
 
   initializeApp() {
@@ -46,64 +44,57 @@ export class AppComponent implements OnInit {
   }
  
   goteoria() {
-    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
       state: { 
-        user: this.user,
+        
        }
     };
     this.router.navigate(['teoria'], navigationExtras);
   }
   gohome() {
-    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
       state: { 
-        user: this.user,
-        }
+        
+       }
     };
     this.router.navigate(['home'], navigationExtras);
   }
   goActividades() {
-    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
       state: { 
-        user: this.user,
-        }
+        
+       }
     };
     this.router.navigate(['actividades'], navigationExtras);
   }
   goPuntaje() {
-    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {  
-        user: this.user,
+      state: { 
+        
        }
     };
     this.router.navigate(['puntaje'], navigationExtras);
   }
   goActualizaciones() {
-    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {  
-        user: this.user,
+      state: { 
+        
        }
     };
     this.router.navigate(['actualizaciones'], navigationExtras);
   }
   goDiploma() {
-    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {  
-        user: this.user,
+      state: { 
+        
        }
     };
     this.router.navigate(['diploma'], navigationExtras);
   }
   goAjustes() {
-    this.user.name = this.myName;
     let navigationExtras: NavigationExtras = {
-      state: {  
-        user: this.user,
+      state: { 
+        
        }
     };
     this.router.navigate(['ajustes'], navigationExtras);
