@@ -59,6 +59,10 @@ const routes: Routes = [
     path: 'mayusculas',
     loadChildren: () => import('./mayusculas/mayusculas.module').then( m => m.MayusculasPageModule)
   },
+  {
+    path: 'actividad-audio',
+    loadChildren: () => import('./actividad-audio/actividad-audio.module').then( m => m.ActividadAudioPageModule)
+  },
 
 ];
 

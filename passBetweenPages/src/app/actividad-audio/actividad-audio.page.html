@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>actividad-audio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="setContenido()" color="light" style="width: 100%;">
+    <ion-card-content>
+      <ion-list class="btn">
+        <ion-label style="font-size: 20px;align-self: center;">Escribe correctamente la palabra que escuches!
+        </ion-label>
+      </ion-list>
+      <ion-list class="btn">
+        <div class="centrarVideo">
+          <audio id="audio" frameborder="0" width="315" height="315" controls>
+            <source [src]="datafile" type="audio/mp3">
+          </audio>
+        </div>
+      </ion-list>
+      <ion-list class="btn">
+
+        <ion-input disabled={{disabled}} [(ngModel)]="respuesta" placeholder="Escribe aquí!"></ion-input>
+      </ion-list>
+      <ion-list class="btn">
+        <ion-button (click)="isCorrect()">Prueba tu respuesta!</ion-button>
+        <ion-button (click)="siguiente()">Siguiente</ion-button>
+        <ion-label style="margin-left:30px; font-size:20px ">Puntaje :{{ puntaje}}</ion-label>
+      </ion-list>
+      
+      <div *ngIf="aux==1">
+
+        <h3>Correcto! </h3>
+      </div>
+      <div *ngIf="aux==2">
+
+        <h3>Incorrecto! </h3>
+      </div>
+    </ion-card-content>
+
+  </ion-card>
+  <ion-card  *ngIf="!setContenido()" color="light"  style="width: 100%;">
+    <ion-card-content>
+        <ion-list class="btn">
+            <ion-label style="font-size: 75px;align-self: center;">Tu puntaje es: {{ puntaje}}/20 </ion-label>
+        </ion-list>
+        <ion-list class="btn">
+            <ion-button   
+                    (click)="Retry()">¡Vuelve a intentarlo!</ion-button>
+        </ion-list>
+    </ion-card-content>
+
+</ion-card>
+</ion-content>
