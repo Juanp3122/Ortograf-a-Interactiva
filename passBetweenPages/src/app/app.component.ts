@@ -48,6 +48,8 @@ export class AppComponent implements OnInit {
       timer(3000).subscribe(()=> this.showSplash = false)
     });
   }
+
+  
  
   goteoria() {
     let navigationExtras: NavigationExtras = {
@@ -103,6 +105,15 @@ export class AppComponent implements OnInit {
         
        }
     };
-    this.router.navigate(['ajustes'], navigationExtras);
+    this.router.navigate(['type-yourname'], navigationExtras);
+  }
+
+  goActAudio(){
+    let navigationExtras: NavigationExtras = {
+      state: { 
+        
+       }
+    };
+    this.router.navigate(['actividad-audio'], navigationExtras);
   }
 }

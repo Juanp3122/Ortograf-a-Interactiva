@@ -25,13 +25,64 @@
       </ion-header>
       <ion-content>
         <ion-list class="lista">
-          <ion-item class="lista" (click)="gohome()" routerDirection="Back">Home</ion-item>
-          <ion-item class="lista" (click)="goteoria()" routerDirection="Back">Teoria </ion-item>
-          <ion-item class="lista" (click)="goActividades()" routerDirection="Back">Actividades</ion-item>
-          <ion-item class="lista" (click)="goPuntaje()" routerDirection="Back">Puntaje</ion-item>
-          <ion-item class="lista" (click)="goActualizaciones()" routerDirection="Back">Actualizaciones</ion-item>
-          <ion-item class="lista" (click)="goDiploma()" routerDirection="Back">Diploma</ion-item>
-          <ion-item class="lista" (click)="goAjustes()" routerDirection="Back">Ajustes</ion-item>
+
+          <ion-item lines="none" (click)="gohome()" routerDirection="Back">
+            <ion-icon name="Home" slot="start"></ion-icon>
+            Home
+          </ion-item>
+
+          <ion-item lines="none" (click)="goteoria()" routerDirection="Back">
+            <ion-icon name="book" slot="start"></ion-icon>
+            Teoria
+          </ion-item>
+
+          <ion-item lines="none" (click)="isRemainder === 1 ? isRemainder = 0 : isRemainder = 1">
+            <ion-icon name="rocket" slot="start"></ion-icon>
+            Actividades
+            <ion-icon slot="end" [name]="isRemainder? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+          </ion-item>
+          <ion-menu-toggle auto-hide="false">
+
+            <ion-list lines="none">
+              <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
+                [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu" (click)="goActividades()" routerDirection="Back">
+                <ion-icon name="book" slot="start"></ion-icon>
+                Tipo de palabra
+              </ion-item>
+              <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
+                [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu" (click)="goActAudio()" routerDirection="Back">
+                <ion-icon name="megaphone" slot="start"></ion-icon>
+                Audio Interactivo
+              </ion-item>
+              <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
+                [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+                <ion-icon name="school" slot="start"></ion-icon>
+                Proximamente
+              </ion-item>
+
+              <ion-item lines="none" (click)="goPuntaje()" routerDirection="Back">
+                <ion-icon name="ribbon" slot="start"></ion-icon>
+                Puntaje
+              </ion-item>
+
+              <ion-item lines="none" (click)="goActualizaciones()" routerDirection="Back">
+                <ion-icon name="wifi" slot="start"></ion-icon>
+                Actualizaciones
+              </ion-item>
+
+              <ion-item lines="none" (click)="goDiploma()" routerDirection="Back">
+                <ion-icon name="school" slot="start"></ion-icon>
+                Diploma
+              </ion-item>
+
+              <ion-item lines="none" (click)="goAjustes()" routerDirection="Back">
+                <ion-icon name="aperture" slot="start"></ion-icon>
+                Salir
+              </ion-item>
+
+          
+            </ion-list>
+          </ion-menu-toggle>    
         </ion-list>
       </ion-content>
     </ion-menu>

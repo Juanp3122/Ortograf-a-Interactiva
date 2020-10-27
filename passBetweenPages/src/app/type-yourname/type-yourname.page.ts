@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 declare var particlesJS: any;
 
@@ -10,7 +11,7 @@ declare var particlesJS: any;
 })
 export class TypeYournamePage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,public toastController: ToastController) { }
 
   ngOnInit() {
     particlesJS.load('particles-js', 'assets/particles.json', function() {
@@ -18,18 +19,43 @@ export class TypeYournamePage implements OnInit {
     });
   }
   myName: string = "";
+
+
+
   user = {
     name: ''
   }
+  
 
-gohome() {
-  this.user.name = this.myName;  // Fetch from ionic-input 
-  let navigationExtras: NavigationExtras = {
-    state: {
-      user: this.user, 
-    }
-  };
-  this.router.navigate(['home'], navigationExtras);
+
+
+  async gohome(){
+    // Fetch from ionic-input 
+  if(this.myName === ""){
+    const toast = await this.toastController.create({
+      message: 'Error: Debes de ingresar un usuario!',
+      duration: 2000
+    });
+    toast.present();
+    let navigationExtras: NavigationExtras = {
+      state: {
+        user: this.user, 
+      }
+    };
+    this.router.navigate(['type-yourname'], navigationExtras);
+
+    
+  }else{
+    this.user.name = this.myName;
+    let navigationExtras: NavigationExtras = {
+      state: {
+        user: this.user, 
+      }
+    };
+    this.router.navigate(['home'], navigationExtras);
+  }
+
 }
+
 
 }
