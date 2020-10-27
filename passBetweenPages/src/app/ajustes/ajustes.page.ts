@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-ajustes',
@@ -11,5 +12,25 @@ export class AjustesPage implements OnInit {
 
   ngOnInit() {
   }
+
+  allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+
+  correcto(){
+    
+  }
+
+  
 
 }

@@ -8,12 +8,15 @@ import { AjustesPageRoutingModule } from './ajustes-routing.module';
 
 import { AjustesPage } from './ajustes.page';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AjustesPageRoutingModule
+    AjustesPageRoutingModule,
+    DragDropModule
   ],
   declarations: [AjustesPage]
 })

@@ -105,7 +105,7 @@ export class AppComponent implements OnInit {
         
        }
     };
-    this.router.navigate(['type-yourname'], navigationExtras);
+    this.router.navigate(['ajustes'], navigationExtras);
   }
 
   goActAudio(){
@@ -116,4 +116,5 @@ export class AppComponent implements OnInit {
     };
     this.router.navigate(['actividad-audio'], navigationExtras);
   }
+  
 }

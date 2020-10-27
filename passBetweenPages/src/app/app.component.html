@@ -55,9 +55,9 @@
                 Audio Interactivo
               </ion-item>
               <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
-                [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+                [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu"(click)="goAjustes()" routerDirection="Back">
                 <ion-icon name="school" slot="start"></ion-icon>
-                Proximamente
+                Drag and Drop
               </ion-item>
 
               <ion-item lines="none" (click)="goPuntaje()" routerDirection="Back">
