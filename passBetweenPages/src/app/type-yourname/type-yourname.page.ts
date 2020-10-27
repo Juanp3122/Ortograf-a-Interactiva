@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { MenuController, ToastController } from '@ionic/angular';
 
 declare var particlesJS: any;
 
@@ -11,7 +11,9 @@ declare var particlesJS: any;
 })
 export class TypeYournamePage implements OnInit {
 
-  constructor(private router: Router,public toastController: ToastController) { }
+  constructor(private router: Router,public toastController: ToastController,public menu: MenuController) { 
+    this.menu.swipeGesture(false);
+  }
 
   ngOnInit() {
     particlesJS.load('particles-js', 'assets/particles.json', function() {
