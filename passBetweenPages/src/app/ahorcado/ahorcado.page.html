@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar translucent>
+    <ion-menu-button></ion-menu-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src='/assets/icon/imagenesAhor/{{numFallos}}.png' />
+      </ion-col>
+      <ion-col>
+        <ion-badge *ngFor="let fallo  of fallos">{{fallo}}</ion-badge>
+      </ion-col>
+    </ion-row>
+
+    <ion-col>
+      <p class="palabra-adivinada-po-ahora">{{palabraAdivinadaPorAhora}}</p>
+    </ion-col>
+
+
+    <ion-row>
+      <ion-col class="botones">
+        <button *ngFor="let letra of LETRAS" ion-button round small outline
+          (click)="botonClickend(letra)">{{letra}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

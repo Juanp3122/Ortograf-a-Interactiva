@@ -116,5 +116,12 @@ export class AppComponent implements OnInit {
     };
     this.router.navigate(['actividad-audio'], navigationExtras);
   }
-  
+  goAhorcado(){
+    let navigationExtras: NavigationExtras = {
+      state: { 
+        
+       }
+    };
+    this.router.navigate(['ahorcado'], navigationExtras);
+  }
 }

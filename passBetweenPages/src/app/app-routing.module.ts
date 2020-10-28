@@ -63,6 +63,10 @@ const routes: Routes = [
     path: 'actividad-audio',
     loadChildren: () => import('./actividad-audio/actividad-audio.module').then( m => m.ActividadAudioPageModule)
   },
+  {
+    path: 'ahorcado',
+    loadChildren: () => import('./ahorcado/ahorcado.module').then( m => m.AhorcadoPageModule)
+  },
 
 ];
 

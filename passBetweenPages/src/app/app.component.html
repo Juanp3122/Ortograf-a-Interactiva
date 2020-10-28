@@ -60,6 +60,12 @@
                 Drag and Drop
               </ion-item>
 
+              <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
+                [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu"(click)="goAhorcado()" routerDirection="Back">
+                <ion-icon name="body" slot="start"></ion-icon>
+                Ahorcado
+              </ion-item>
+
               <ion-item lines="none" (click)="goPuntaje()" routerDirection="Back">
                 <ion-icon name="ribbon" slot="start"></ion-icon>
                 Puntaje
