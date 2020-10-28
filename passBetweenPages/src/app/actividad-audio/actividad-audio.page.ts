@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class ActividadAudioPage implements OnInit {
   indice=0;
   audios=["/assets/icon/avion.mp3",
-  "/assets/icon/abeja.mp3"];
-  respuestas=["Avión","Abeja"]
+  "/assets/icon/ANIS.mp3","/assets/icon/ANTIACIDO.mp3","/assets/icon/BARBARO.mp3","/assets/icon/CODIGO.mp3",
+  "/assets/icon/COLERA.mp3","/assets/icon/ILEGITIMO.mp3","/assets/icon/JURASICO.mp3","/assets/icon/PIRAMIDE.mp3",
+  "/assets/icon/SILABA.mp3"];
+  respuestas=["Avión","Anís","Antiácido","Bárbaro","Código","Cólera","Ilegítimo","Jurásico","Pirámide","Sílaba"];
   public datafile ="";
   audio = document.getElementById('audio');
   respuesta:string;

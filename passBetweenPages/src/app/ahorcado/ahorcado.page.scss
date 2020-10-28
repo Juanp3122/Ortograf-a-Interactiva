@@ -4,8 +4,24 @@
     font-size: 24px;
 }
 .botones{
-    text-align: center;
+    font-size: large;
+    font-style: italic;
+    background-color: lightblue;
+    margin: 8px;
+    border-radius: 10px;
+    
 
+}
+.label{
+    font-size: 30px;
+    text-align: center;
+}
+.centrar{
+    text-align: center; 
+    margin-top: 20px;
+}
+.badge{
+    font-size: large;
 }
 .bt-letra-acertada{
 background-color: lightgreen;
@@ -15,4 +31,7 @@ background-color: lightgreen;
 }
 .bt-no-pulsado{
     background-color: white;
+}
+.centrar{
+    text-align: center; 
 }

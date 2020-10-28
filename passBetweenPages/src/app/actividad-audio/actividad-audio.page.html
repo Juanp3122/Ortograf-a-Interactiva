@@ -1,10 +1,15 @@
 <ion-header>
   <ion-toolbar translucent>
+    <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div class="centrar">
+      <label class="label"> ¡Escucha la palabra!</label>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <ion-card *ngIf="setContenido()" color="light" style="width: 100%;">
     <ion-card-content>
       <ion-list class="btn">
@@ -12,7 +17,7 @@
         </ion-label>
       </ion-list>
       <ion-list class="btn">
-        <div class="centrarVideo">
+        <div class="centrarVideo" style="margin: 50px;" >
           <audio id="audio" frameborder="0" width="315" height="315" controls>
             <source [src]="datafile" type="audio/mp3">
           </audio>
@@ -34,7 +39,7 @@
       </div>
       <div *ngIf="aux==2">
 
-        <h3>Incorrecto! </h3>
+        <h3>Incorrecto! la forma correcta de escribir la palabra es "{{respuestas[indice]}}"   </h3>
       </div>
     </ion-card-content>
 

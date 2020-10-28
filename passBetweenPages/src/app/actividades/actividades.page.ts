@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./actividades.page.scss'],
 })
 export class ActividadesPage implements OnInit {
-  palabra = ['Despertar', 'Artista', 'Máximo', 'Guárdamelo'];
-  respuestas = ['Aguda', 'Grave', 'Esdrujula', 'Sobreesdrujula'];
+  palabra = ['Despertar','Máximo', 'Artista', 'Guárdamelo','Económico','Biología',
+              'Camión','Entrégaselo','Dócil','Camarón'];
+  respuestas = ['Aguda','Esdrujula','Grave', 'Sobreesdrujula','Esdrujula','Grave',
+              'Aguda','Sobreesdrujula','Grave','Aguda'];
   indice = 0;
   respuesta;
   puntaje = 0;

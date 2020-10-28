@@ -1,7 +1,13 @@
 <ion-header>
     <ion-toolbar translucent>
-        <ion-menu-button></ion-menu-button>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <div class="centrar">
+            <label class="label"> ¡Tipo de palabra!</label>
+          </div>
     </ion-toolbar>
+    
   </ion-header>
 <ion-content  class="ion-padding">
     <ion-grid  >
@@ -56,7 +62,7 @@
                 <ion-card  *ngIf="!setContenido()" color="light"  style="width: 100%;">
                     <ion-card-content>
                         <ion-list class="btn">
-                            <ion-label style="font-size: 75px;align-self: center;">Tu puntaje es: {{ puntaje}}/40 </ion-label>
+                            <ion-label style="font-size: 75px;align-self: center;">Tu puntaje es: {{ puntaje}}/100 </ion-label>
                         </ion-list>
                         <ion-list class="btn">
                             <ion-button   
