@@ -9,12 +9,18 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { DragDropModule } from '@angular/cdk/drag-drop'
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
+
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { firebaseConfig } from './credentials';
+import { AngularFireModule } from 'angularfire2';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,DragDropModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,DragDropModule,AngularFireModule.initializeApp(firebaseConfig),
+  AngularFirestoreModule.enablePersistence(),],
   providers: [
     StatusBar,
     SplashScreen,

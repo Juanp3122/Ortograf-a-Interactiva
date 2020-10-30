@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { MenuController, ToastController } from '@ionic/angular';
 
+
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LoadingController, AlertController } from '@ionic/angular';
+import { FirestoreService } from '../services/data/firestore.service';
+
 declare var particlesJS: any;
 
 @Component({
@@ -11,7 +16,18 @@ declare var particlesJS: any;
 })
 export class TypeYournamePage implements OnInit {
 
-  constructor(private router: Router,public toastController: ToastController,public menu: MenuController) { 
+  public createSongForm: FormGroup;
+
+  constructor(private router: Router,public toastController: ToastController,public menu: MenuController,
+    public loadingCtrl: LoadingController,
+    public alertCtrl: AlertController,
+    private firestoreService: FirestoreService,
+    formBuilder: FormBuilder,) { 
+
+      this.createSongForm = formBuilder.group({
+        userName: ['', Validators.required],
+        puntaje: ['',]
+      });
     this.menu.swipeGesture(false);
   }
 
@@ -26,6 +42,32 @@ export class TypeYournamePage implements OnInit {
 
   user = {
     name: ''
+  }
+
+  async createSong() {
+    const loading = await this.loadingCtrl.create();
+  
+    const userName = this.createSongForm.value.userName;
+    const puntaje = this.createSongForm.value.puntaje;
+    
+
+  
+    this.firestoreService
+      .createSong(userName,puntaje)
+      .then(
+        () => {
+          loading.dismiss().then(() => {
+            this.router.navigateByUrl('home');
+          });
+        },
+        error => {
+          loading.dismiss().then(() => {
+            console.error(error);
+          });
+        }
+      );
+  
+    return await loading.present();
   }
   
 

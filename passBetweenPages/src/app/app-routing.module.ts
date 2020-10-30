@@ -19,7 +19,8 @@ const routes: Routes = [
   {
     path: 'teoria',
     loadChildren: () => import('./teoria/teoria.module').then( m => m.TeoriaPageModule)
-  },  {
+  },
+  {
     path: 'actividades',
     loadChildren: () => import('./actividades/actividades.module').then( m => m.ActividadesPageModule)
   },

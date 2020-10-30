@@ -1,39 +1,43 @@
 <div class="main">
-<ion-grid fixed>
-  
-  <ion-row style="margin-top: 60px;">
-    
-    <ion-col>
-      
-    </ion-col>
+  <ion-grid fixed>
 
-    <ion-col class="ion-align-self-center" size-lg="4" size-xs="12">
-      <ion-card color="light"> 
-        <ion-card-header >
-          <div>
-            <img src='/assets/icon/logo.png'>
-            <ion-input placeholder="Ingrese su nick" type="text" class="input" [(ngModel)]="myName" ></ion-input>
-          </div>
+    <ion-row style="margin-top: 60px;">
 
-        </ion-card-header>
-        <ion-card-content>
-          <div>
+      <ion-col>
 
-            <ion-button class="boton" (click)="gohome()" routerDirection="Back" expand="block" >
-              LOGIN
-            </ion-button>
-          </div>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-    <ion-col></ion-col>
+      </ion-col>
 
-  </ion-row>
-</ion-grid>
-<div id="particles-js"> </div>
+      <ion-col class="ion-align-self-center" size-lg="4" size-xs="12">
+        <form [formGroup]="createSongForm" (submit)="createSong()">
+          <ion-card color="light">
+            <ion-card-header>
+              <div>
+                <img src='/assets/icon/logo.png'>
+
+
+                <ion-input formControlName="userName" type="text" [(ngModel)]="myName" placeholder="Ingresa tu Usuario!">
+                </ion-input>
+
+                
+
+
+              </div>
+
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+
+                <ion-button expand="block" type="submit" (click)="gohome()" [disabled]="!createSongForm.valid">
+                  Login
+                </ion-button>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </form>
+      </ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+  </ion-grid>
+  <div id="particles-js"> </div>
 </div>
-
-
-
-
-
