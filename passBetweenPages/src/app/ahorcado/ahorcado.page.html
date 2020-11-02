@@ -2,8 +2,8 @@
   <ion-toolbar translucent>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-     
-     
+
+
     </ion-buttons>
     <div class="centrar">
       <label class="label"> ¡Adivina la palabra!</label>
@@ -15,35 +15,53 @@
 <ion-content class="ion-padding">
   <ion-card color="light">
     <ion-card-content>
-      <div class="centrar">
-        <label class="label"> ADIVINA LA PALABRA</label>
-      </div>
-     
-  
-    <div class="centrar">
-      <img src='/assets/icon/imagenesAhor/{{numFallos}}.jpg' />
-    </div>
-   
-    <div class="centrar">
-      <ion-badge *ngFor="let fallo  of fallos" color="danger" class="badge" >{{fallo}}</ion-badge>
-    </div>
-   
-  
-  
-  
-  
-  <p class="palabra-adivinada-po-ahora">{{palabraAdivinadaPorAhora}}</p>
-  
-  
-  
-  
-  
-    <button *ngFor="let letra of LETRAS" ion-button round small outline
-      (click)="botonClickend(letra)" class="botones" >{{letra}}</button>
+
+      <ion-row>
+        <ion-col center text-center>
+          <div class="centrar">
+            <label class="label"> ADIVINA LA PALABRA</label>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col center text-center>
+          <div class="centrar">
+            <img src='/assets/icon/imagenesAhor/{{numFallos}}.jpg' />
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col center text-center>
+          <div class="centrar">
+            <ion-badge *ngFor="let fallo  of fallos" color="danger" class="badge">{{fallo}}</ion-badge>
+          </div>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-row>
+        <ion-col center text-center>
+          <div class="centrar">
+            <p class="palabra-adivinada-po-ahora">{{palabraAdivinadaPorAhora}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col center text-center>
+          <div class="centrar">
+            <button *ngFor="let letra of LETRAS" ion-button round small outline (click)="botonClickend(letra)"
+              class="botones">{{letra}}</button>
+          </div>
+        </ion-col>
+      </ion-row>
     </ion-card-content>
-    
+
   </ion-card>
-        
-      
-    
+
+
+
 </ion-content>
