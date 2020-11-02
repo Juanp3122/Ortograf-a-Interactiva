@@ -53,11 +53,12 @@ export class AhorcadoPage implements OnInit {
     if (!this.letraAcertada(letra)) {
       if (this.numFallos < 6) {
         this.aumentarFallos(letra);
-      } else {
+      }
+      if(this.numFallos == 6){
         this.mostrarMensajeDePerder();
         console.log(this.numFallos);
-        
       }
+      
     } else {
 
       let aciertos = this.Aciertos.toString();
