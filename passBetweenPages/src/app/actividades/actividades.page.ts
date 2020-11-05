@@ -146,14 +146,8 @@ export class ActividadesPage implements OnInit {
     }
   }
   Retry() {
-    const userName = this.firestoreService.getUltimouser();
-    const puntajeAct = this.firestoreService.getPuntaje();
-
-   console.log(puntajeAct);
-   console.log(userName);
-    
+    const userName = this.firestoreService.getUltimouser(); 
     this.firestoreService.modificar(userName,this.puntaje);
-
     this.indice = 0;
     this.puntaje = 0;
   }

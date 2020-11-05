@@ -13,7 +13,7 @@ export class FirestoreService {
 
   utlimoId: string;
   ultimoNombre: string;
-  puntajeActual: any;
+  puntajeActual=0;
 
 
   createSong(
@@ -22,6 +22,7 @@ export class FirestoreService {
     
  
   ): Promise<void> {
+    puntaje=0;
     const id = this.firestore.createId();
     this.utlimoId = id;
     this.ultimoNombre = userName;
@@ -46,17 +47,14 @@ export class FirestoreService {
     
     const id = this.getUltimo();
     this.utlimoId = id;
-    this.puntajeActual = puntaje;
+    this.puntajeActual=this.puntajeActual+puntaje
+    puntaje=this.puntajeActual
     
-    
-  
+  console.log("pntaje"+this.puntajeActual)
     return this.firestore.doc(`songList/${id}`).set({
       id,
       userName,
       puntaje,
-      
-      
-
     });
   }
 
@@ -79,7 +77,7 @@ export class FirestoreService {
   }
 
   getPuntaje(){
-    let puntos = this.puntajeActual;
-    return puntos;
+
+    return this.puntajeActual;
   }
 }

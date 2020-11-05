@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { FirestoreService } from '../services/data/firestore.service';
+import { User} from '../models/user.interface';
 @Component({
   selector: 'app-actividad-audio',
   templateUrl: './actividad-audio.page.html',
@@ -18,7 +20,7 @@ export class ActividadAudioPage implements OnInit {
   aux=0;
   disabled=false;
   puntaje=0;
-  constructor() { }
+  constructor(private firestoreService: FirestoreService) { }
 
   ngOnInit() {
     this.datafile=this.audios[this.indice]
@@ -53,7 +55,8 @@ export class ActividadAudioPage implements OnInit {
     }
   }
   Retry(){
-    
+    const userName = this.firestoreService.getUltimouser(); 
+    this.firestoreService.modificar(userName,this.puntaje);
     this.puntaje=0;
     this.indice=0;
     this.datafile=this.audios[0]
