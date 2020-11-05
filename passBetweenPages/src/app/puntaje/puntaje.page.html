@@ -8,13 +8,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="padding">
-  <ion-item
-    *ngFor="let user of songList | async"
-  >
-    <ion-label>
-      <h2>{{ user.userName}}</h2>
-      <p>puntaje: {{user.puntaje}}</p>
-    </ion-label>
-  </ion-item>
+
+
+
+<ion-content class="ion-padding">
+  <h3>PUNTAJE ACTUAL</h3>
+  <p>USUARIO: {{ song?.userName }} PUNTOS: {{ song?.puntaje }}.</p>
+
+  <ion-Button (click)="prueba()">prueba xd</ion-Button>
+
 </ion-content>

@@ -18,21 +18,23 @@ export class TypeYournamePage implements OnInit {
 
   public createSongForm: FormGroup;
 
-  constructor(private router: Router,public toastController: ToastController,public menu: MenuController,
+
+  constructor(private router: Router, public toastController: ToastController, public menu: MenuController,
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
     private firestoreService: FirestoreService,
-    formBuilder: FormBuilder,) { 
+    formBuilder: FormBuilder,) {
 
-      this.createSongForm = formBuilder.group({
-        userName: ['', Validators.required],
-        puntaje: ['',]
-      });
+    this.createSongForm = formBuilder.group({
+      userName: ['', Validators.required],
+      puntaje: ['',],
+      posicion: ['',]
+    });
     this.menu.swipeGesture(false);
   }
 
   ngOnInit() {
-    particlesJS.load('particles-js', 'assets/particles.json', function() {
+    particlesJS.load('particles-js', 'assets/particles.json', function () {
       console.log('callback - particles.js config loaded');
     });
   }
@@ -44,16 +46,22 @@ export class TypeYournamePage implements OnInit {
     name: ''
   }
 
+ 
+
   async createSong() {
+
+
+
     const loading = await this.loadingCtrl.create();
-  
+
     const userName = this.createSongForm.value.userName;
     const puntaje = this.createSongForm.value.puntaje;
-    
 
-  
+   
+
+
     this.firestoreService
-      .createSong(userName,puntaje)
+      .createSong(userName, puntaje)
       .then(
         () => {
           loading.dismiss().then(() => {
@@ -66,40 +74,42 @@ export class TypeYournamePage implements OnInit {
           });
         }
       );
-  
-    return await loading.present();
-  }
-  
-
-
-
-  async gohome(){
-    // Fetch from ionic-input 
-  if(this.myName === ""){
-    const toast = await this.toastController.create({
-      message: 'Error: Debes de ingresar un usuario!',
-      duration: 2000
-    });
-    toast.present();
-    let navigationExtras: NavigationExtras = {
-      state: {
-        user: this.user, 
-      }
-    };
-    this.router.navigate(['type-yourname'], navigationExtras);
 
     
-  }else{
-    this.user.name = this.myName;
-    let navigationExtras: NavigationExtras = {
-      state: {
-        user: this.user, 
-      }
-    };
-    this.router.navigate(['home'], navigationExtras);
+
+    return await loading.present();
   }
 
-}
+
+
+
+  async gohome() {
+    // Fetch from ionic-input 
+    if (this.myName === "") {
+      const toast = await this.toastController.create({
+        message: 'Error: Debes de ingresar un usuario!',
+        duration: 2000
+      });
+      toast.present();
+      let navigationExtras: NavigationExtras = {
+        state: {
+          user: this.user,
+        }
+      };
+      this.router.navigate(['type-yourname'], navigationExtras);
+
+
+    } else {
+      this.user.name = this.myName;
+      let navigationExtras: NavigationExtras = {
+        state: {
+          user: this.user,
+        }
+      };
+      this.router.navigate(['home'], navigationExtras);
+    }
+
+  }
 
 
 }
