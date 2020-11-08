@@ -13,13 +13,16 @@ import { ActivatedRoute } from '@angular/router';
 export class PuntajePage implements OnInit {
 
 
-  public songList: Observable<User[]>;
+  
+  public prueba: Observable<User[]>;
   public song: User;
 
   constructor(private firestoreService: FirestoreService,private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.songList = this.firestoreService.getSongList();
+    
+
+    this.prueba = this.firestoreService.ordernar();
 
 
     const songId: string = this.firestoreService.getUltimo();

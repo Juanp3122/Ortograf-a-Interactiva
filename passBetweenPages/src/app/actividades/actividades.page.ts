@@ -47,7 +47,7 @@ export class ActividadesPage implements OnInit {
   }
 
   ngOnInit() {
-    this.songList = this.firestoreService.getSongList();
+    
   }
 
   siguiente() {

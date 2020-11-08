@@ -8,13 +8,36 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" size-lg="12" size-md="4" size-ms="6" size-xs="12">
+      <ion-card color="light">
+        <ion-card-content>
+          <div class="leaderboard">
+            <header>
+              <h1>Leader Board</h1>
+              <img src="/assets/icon/logo.png" alt="">
+            </header>
+            <table>
+              <thead>
+                <tr>
+                  <th class="rank">Rank</th>
+                  <th class="nick">Nickname</th>
+                  <th class="sp">Puntaje</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let song of prueba | async; let i = index">
+                  <td class="rank">{{i + 1}}</td>
+                  <td class="nick">{{ song.userName}}</td>
+                  <td class="sp">{{ song.puntaje }}</td>
 
-
-
-<ion-content class="ion-padding">
-  <h3>PUNTAJE ACTUAL</h3>
-  <p>USUARIO: {{ song?.userName }} PUNTOS: {{ song?.puntaje }}.</p>
-
-  <ion-Button (click)="prueba()">prueba xd</ion-Button>
-
-</ion-content>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

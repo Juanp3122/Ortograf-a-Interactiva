@@ -1,18 +1,62 @@
-<ion-header>
-  <ion-toolbar translucent>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-  
-  <ion-content class="ion-padding">
-    <h3>Hello everyone !</h3>
-    <h3>My name is {{ employee.fname }} {{ employee.lname }}</h3>
-  
-    <ion-button (click)="moreInfo()">More Details</ion-button>
-  
-    <div *ngIf="showCity === true">
-      <h3>I live in {{ employee.city}}</h3>
-    </div>
-  </ion-content>
+<div class="leaderboard">
+  <header>
+    <h1>Leader Board</h1>
+    <img src="https://i.imgur.com/xUSrEpd.png" alt="">
+    <nav>
+      <a href="" class="active">Solo</a>
+    </nav>
+  </header>
+  <table>
+    <thead>
+      <tr>
+        <th class="rank"></th>
+        <th class="nick">Nickname</th>
+        <th class="Puntaje">SP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank">1</td>
+        <td class="nick">Sc0utOP</td>
+        <td class="sp">6.308</td>
+        <td class="kd">4.8</td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td class="nick">MortaL</td>
+        <td class="sp">6.301</td>
+        <td class="kd">4.5</td>
+      </tr>
+      <tr>
+        <td class="rank">4</td>
+        <td class="nick">CarryMinati</td>
+        <td class="sp">5.108</td>
+        <td class="kd">2.1</td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
+        <td class="nick">CarryMinati</td>
+        <td class="sp">5.108</td>
+        <td class="kd">2.1</td>
+      </tr>
+      <tr>
+        <td class="rank">6</td>
+        <td class="nick">CarryMinati</td>
+        <td class="sp">5.108</td>
+        <td class="kd">2.1</td>
+      </tr>
+      <tr>
+        <td class="rank">7</td>
+        <td class="nick">CarryMinati</td>
+        <td class="sp">5.108</td>
+        <td class="kd">2.1</td>
+      </tr>
+      <tr>
+        <td class="rank">8</td>
+        <td class="nick">CarryMinati</td>
+        <td class="sp">5.108</td>
+        <td class="kd">2.1</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
