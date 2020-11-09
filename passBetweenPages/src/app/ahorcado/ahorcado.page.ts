@@ -2,6 +2,9 @@ import { EventHandlerVars } from '@angular/compiler/src/compiler_util/expression
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { stringify } from 'querystring';
+import { FirestoreService } from '../services/data/firestore.service';
+import { User } from '../models/user.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ahorcado',
@@ -20,6 +23,8 @@ export class AhorcadoPage implements OnInit {
     "cajon", "sofá", "camisa", "lápiz",
     "cántaro", "accíon", "pájaro"];
 
+  puntaje= 0;
+
   palabraAdivinadaPorAhora: string;
   palabraAAdivinar: string;
   fallos: Array<string>
@@ -28,7 +33,7 @@ export class AhorcadoPage implements OnInit {
 
   Aciertos: Array<string>
 
-  constructor(public alertController: AlertController) {
+  constructor(public alertController: AlertController, private firestoreService: FirestoreService) {
     this.inicializar();
   }
   inicializar(): void {
@@ -54,11 +59,11 @@ export class AhorcadoPage implements OnInit {
       if (this.numFallos < 6) {
         this.aumentarFallos(letra);
       }
-      if(this.numFallos == 6){
+      if (this.numFallos == 6) {
         this.mostrarMensajeDePerder();
-        console.log(this.numFallos);
+        
       }
-      
+
     } else {
 
       let aciertos = this.Aciertos.toString();
@@ -68,6 +73,11 @@ export class AhorcadoPage implements OnInit {
 
       if (this.numAciertos == this.palabraAAdivinar.length
         && aciertos == this.palabraAAdivinar) {
+
+        this.puntaje += 20;
+        const userName = this.firestoreService.getUltimouser();
+        this.firestoreService.modificar(userName, this.puntaje);
+
         this.mostrarMensajeDeGanar()
         console.log(this.numFallos);
 
@@ -105,7 +115,7 @@ export class AhorcadoPage implements OnInit {
   async mostrarMensajeDePerder() {
     const alert = await this.alertController.create({
       header: 'Has Perdido',
-      message: '!Lo siento¡ Pulse ok para juga otra vez.',
+      message: '!Lo siento¡ Pulse ok para jugar otra vez.',
       buttons: [{
         text: 'OK',
         handler: () => {
@@ -134,8 +144,25 @@ export class AhorcadoPage implements OnInit {
     await alert.present();
   }
 
+  async explicacion() {
+    const alert = await this.alertController.create({
+      header: 'Bienvenid@ a Adivina La Palabra',
+      message: 'Aqui tendrás que tendras que adivinar palabras que ya vimos dentro de la teoria.. Suerte',
+      buttons: [{
+        text: 'A JUGAR',
+        handler: () => {
+          
+        }
+      }
+      ]
+    });
+
+    await alert.present();
+  }
+
 
   ngOnInit() {
+    this.explicacion();
   }
 
 }

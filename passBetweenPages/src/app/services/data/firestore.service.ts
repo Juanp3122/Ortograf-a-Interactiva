@@ -58,7 +58,9 @@ export class FirestoreService {
     });
   }
 
-
+  getSongList(): Observable<User[]> {
+    return this.firestore.collection<User>(`songList`).valueChanges();
+  }
 
   ordernar(): Observable<User[]> {
     return this.firestore.collection<User>(`songList`, ref => ref.orderBy('puntaje',"desc")).valueChanges();

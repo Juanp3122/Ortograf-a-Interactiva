@@ -10,14 +10,14 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-card *ngIf="setContenido()" color="light" style="width: 100%;">
+  <ion-card *ngIf="setContenido()" color="light" >
     <ion-card-content>
       <ion-list class="btn">
         <ion-label style="font-size: 20px;align-self: center;">Escribe correctamente la palabra que escuches!
         </ion-label>
       </ion-list>
       <ion-list class="btn">
-        <div class="centrarVideo" style="margin: 50px;" >
+        <div class="centrarVideo" style="margin-top: 50px;" >
           <audio id="audio" frameborder="0" width="315" height="315" controls>
             <source [src]="datafile" type="audio/mp3">
           </audio>

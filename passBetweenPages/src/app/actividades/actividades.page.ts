@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { FirestoreService } from '../services/data/firestore.service';
 import { User} from '../models/user.interface';
 import { ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -42,11 +43,12 @@ export class ActividadesPage implements OnInit {
   ]
   correct = 0;
   public songList: Observable<User[]>;
-  constructor(private firestoreService: FirestoreService) {
+  constructor(public alertController: AlertController,private firestoreService: FirestoreService) {
 
   }
 
   ngOnInit() {
+    this.explicacion();
     
   }
 
@@ -152,12 +154,26 @@ export class ActividadesPage implements OnInit {
     this.puntaje = 0;
   }
 
-  actualizar(){
-    
+
+  async explicacion() {
+    const alert = await this.alertController.create({
+      header: 'Bienvenid@ a Tipo-Palabra',
+      message: 'Aqui tendrás que tendras escoger el tipo correcto de la palabra .. Suerte',
+      buttons: [{
+        text: 'A JUGAR',
+        handler: () => {
+          
+        }
+      }
+      ]
+    });
+
+    await alert.present();
   }
-
-
 }
+
+
+
 
 
 
