@@ -18,10 +18,10 @@ export class AhorcadoPage implements OnInit {
     "ñ", "o", "ó", "p", "q", "r", "s", "t",
     "u", "ú", "v", "w", "x", "y", "z"];
 
-  readonly PALABRAS = ["saltaba", "ángel", "cafe",
+  readonly PALABRAS = ["saltaba", "ángel", "café",
     "accíon", "parís", "personalicé",
-    "cajon", "sofá", "camisa", "lápiz",
-    "cántaro", "accíon", "pájaro"];
+    "cajón", "sofá", "camisa", "lápiz",
+    "cántaro", "acción", "pájaro"];
 
   puntaje= 0;
 
